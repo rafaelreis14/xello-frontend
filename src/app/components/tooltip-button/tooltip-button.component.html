@@ -1,0 +1,7 @@
+
+<div [ngStyle]="{'visibility':visible ? 'visible' : 'hidden'}"  [ngClass]="tooltipAbove ? 'tooltipAbove' : 'tooltipBelow'" >
+    <span>{{tolltipText}}</span>
+</div>      
+<button type="button" color="#FF446C" class="btn btn-primary btn-lg" (click)="showTooltip()">
+    <span>{{buttonText}}</span>
+</button>
