@@ -32,10 +32,14 @@ export class TooltipButtonComponent implements OnInit {
     }
   }
 
+
   @HostListener("window:scroll", [])
-  onScroll(): void {    
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      console.log('its here');
+  onScroll(): void {
+    const componentPosition = this.eRef.nativeElement.getBoundingClientRect().top
+    if (componentPosition > 40) {
+      this.tooltipAbove = true;
+    } else {
+      this.tooltipAbove = false;
     }
   }
 

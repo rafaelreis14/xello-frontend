@@ -1,7 +1,7 @@
 
-<div [ngStyle]="{'visibility':visible ? 'visible' : 'hidden'}"  [ngClass]="tooltipAbove ? 'tooltipAbove' : 'tooltipBelow'" >
+<div [ngStyle]="{'visibility':visible ? 'visible' : 'hidden'}" [attr.aria-hidden]="!visible" aria-label="tolltipText" [ngClass]="tooltipAbove ? 'tooltipAbove' : 'tooltipBelow'" >
     <span>{{tolltipText}}</span>
 </div>      
-<button type="button" color="#FF446C" class="btn btn-primary btn-lg" (click)="showTooltip()">
+<button #button type="button" color="#FF446C" aria-label="buttonText" class="btn btn-primary btn-lg" (click)="showTooltip()">
     <span>{{buttonText}}</span>
 </button>
